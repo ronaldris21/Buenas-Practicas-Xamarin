@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TriggersStanding"
+             x:Class="TriggersStanding.MainPage"
+             
+             
+             NavigationPage.HasNavigationBar="True"
+             Icon="datelove"
+             Title="Dating App"
+             xmlns:TriggersClass="clr-namespace:TriggersStanding.TriggersFolder"
+             >
+
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <Style x:Key="btnStyle" TargetType="Button">
+                    <Setter Property="BackgroundColor" Value="LightGray"/>
+                    <Setter Property="BorderColor" Value="Blue"  />
+                    <Setter Property="BorderRadius" Value="20"/>
+                    <Setter Property="BorderWidth" Value="2" />
+                    <Setter Property="FontSize" Value="Medium" />
+                    <Setter Property="TextColor" Value="DarkBlue"/>
+                    <Setter Property="FontAttributes" Value="Bold"/>
+                    <Setter Property="FontFamily" Value="IBMPlexMono-SemiBoldItalic"/>
+
+                    <!--TRIGGERS FOR STYLE!!  Para el evento Clicked!-->
+
+                    <Style.Triggers>
+                        <EventTrigger Event="Clicked" >
+                            <TriggersClass:BtnClickedTrigger/>
+                        </EventTrigger>
+                    </Style.Triggers>
+
+                </Style>
+
+            </ResourceDictionary>
+        </ContentPage.Resources>
+
+
+        <ContentPage.ToolbarItems>
+            <ToolbarItem Text="My Standings" Command="{Binding MyStanding}"/>
+        </ContentPage.ToolbarItems>
+
+        <ContentPage.Content>
+            <ScrollView IsClippedToBounds="True">
+                <StackLayout BackgroundColor="LightGray">
+                    <StackLayout HorizontalOptions="Fill">
+                        <Image 
+                            Source="StandinLayer" HorizontalOptions="Fill"
+                            VerticalOptions="Start"
+                        />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label 
+                                Style="{StaticResource labelHeader}"
+                                Text="DATE NAME:"
+                            />
+                        <Editor
+                                Placeholder="Describe what-s the date about"
+                                HeightRequest="150"
+                                HorizontalOptions="FillAndExpand"
+                                Margin="5,5"
+                                x:Name="txtEditor"
+                            />
+                        <StackLayout Orientation="Horizontal" HeightRequest="80" HorizontalOptions="Fill">
+                            <Label Margin="6,4,3,4"
+                                        Text="Fecha:"
+                                        Style="{StaticResource labelHeader}"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="CenterAndExpand"
+                                />
+                            <DatePicker
+                            
+                                    FontFamily="IBMPlexMono-SemiBoldItalic"
+                                    FontSize="Medium"
+                                    TextColor="Black" 
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                            x:Name="DateFecha"
+                                />
+                        </StackLayout>
+
+                        <Label Text="How do you want me to be?"
+                                FontFamily="IBMPlexMono-SemiBoldItalic"
+                                FontSize="Medium"
+                                TextColor="Blue"
+                                HorizontalOptions="CenterAndExpand"
+                            />
+                        <Grid Margin="5,10" HorizontalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <!--PAR 1-->
+                            <Button Text="FUNNY"
+                                    Style="{StaticResource btnStyle}"
+                                    x:Name="btn1"
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                >
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference btn2},
+                                    Path=BackgroundColor}" Value="Blue">
+                                        <Setter Property="BackgroundColor" Value="LightGray"/>
+                                        <Setter Property="TextColor" Value="DarkBlue"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <Button Text="BORING"
+                                    Style="{StaticResource btnStyle}"
+                                    x:Name="btn2"
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                >
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference btn1},
+                                    Path=BackgroundColor}" Value="Blue">
+                                        <Setter Property="BackgroundColor" Value="LightGray"/>
+                                        <Setter Property="TextColor" Value="DarkBlue"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+
+                            <!--PAR 2-->
+
+                            <Button Text="TALKER"
+                                    Style="{StaticResource btnStyle}"
+                                    x:Name="btn3"
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                >
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference btn4},
+                                    Path=BackgroundColor}" Value="Blue">
+                                        <Setter Property="BackgroundColor" Value="LightGray"/>
+                                        <Setter Property="TextColor" Value="DarkBlue"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <Button Text="LISTENER"
+                                    Style="{StaticResource btnStyle}"
+                                    x:Name="btn4"
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                >
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference btn3},
+                                    Path=BackgroundColor}" Value="Blue">
+                                        <Setter Property="BackgroundColor" Value="LightGray"/>
+                                        <Setter Property="TextColor" Value="DarkBlue"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+
+
+
+                            <!--PAR 3-->
+
+
+                            <Button Text="CONSERVATIVE"
+                                    Style="{StaticResource btnStyle}"
+                                    x:Name="btn5"
+                                    Grid.Column="0"
+                                    Grid.Row="2"
+                                >
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference btn6},
+                                    Path=BackgroundColor}" Value="Blue">
+                                        <Setter Property="BackgroundColor" Value="LightGray"/>
+                                        <Setter Property="TextColor" Value="DarkBlue"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <Button Text="INQUISITIVE"
+                                        Style="{StaticResource btnStyle}"
+                                        x:Name="btn6"
+                                        Grid.Column="1"
+                                        Grid.Row="2"
+                                    >
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference btn5},
+                                    Path=BackgroundColor}" Value="Blue">
+                                        <Setter Property="BackgroundColor" Value="LightGray"/>
+                                        <Setter Property="TextColor" Value="DarkBlue"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+
+                        </Grid>
+
+                    <Button Style="{StaticResource btnStyle}" x:Name="Enviarbtn"
+                            Text="Enviar Datos"
+                                Clicked="Enviarbtn_Clicked"></Button>
+                    </StackLayout>
+
+
+                </StackLayout>
+            </ScrollView>
+
+        </ContentPage.Content>
+
+
+    </ContentPage>

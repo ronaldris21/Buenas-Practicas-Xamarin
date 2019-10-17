@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BehaviorsUX.Views.FormsPage"
+             
+             xmlns:be="clr-namespace:BehaviorsUX.Behaviors"
+             >
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,0">
+            <Label Text="Formulario del participante:"
+                   Margin="0,5,0,0"
+                   HorizontalOptions="CenterAndExpand" 
+                   />
+
+            <Label Text="Nombres"/>
+            <Entry Placeholder="Ingrese su nombre">
+                <Entry.Behaviors>
+                    <be:TextValidation/>
+                </Entry.Behaviors>
+            </Entry>
+
+            <Label Text="Apellidos"/>
+            <Entry Placeholder="Ingrese su apellidos">
+                <Entry.Behaviors>
+                    <be:TextValidation/>
+                </Entry.Behaviors>
+            </Entry>
+            
+            <Label Text="Edad"/>
+            <Entry Placeholder="Ingrese su edad"
+                   Keyboard="Numeric"
+                   MaxLength="3">
+                <Entry.Behaviors>
+                    <be:EdadValidationBehavior/>
+                </Entry.Behaviors>            
+            </Entry>
+
+            <Label Text="Telefono"/>
+            <Entry Placeholder="Ingrese su telefono"
+                   Keyboard="Numeric"
+                   MaxLength="8">
+                <Entry.Behaviors>
+                    <be:NumberValidation/>
+                </Entry.Behaviors>
+            </Entry>
+
+            <Label Text="Email"/>
+            <Entry Placeholder="Ingrese su email"
+                   MaxLength="50">
+                <Entry.Behaviors>
+                    <be:EmailValidation/>
+                </Entry.Behaviors>
+            </Entry>
+
+
+            <Label Text="DUI"/>
+            <Entry Placeholder="Ingrese su DUI"
+                   Keyboard="Numeric"
+                   >
+                <Entry.Behaviors>
+                    <be:MaskValidationBehavior Mask="XXXXXXXX-X"/>
+                </Entry.Behaviors>
+            </Entry>
+
+
+            <Label Text="NIT"/>
+            <Entry Placeholder="Ingrese su NIT" 
+                   Keyboard="Numeric"
+                   >
+                <Entry.Behaviors>
+                    <be:MaskValidationBehavior Mask="XXXX-XXXXXX-XXX-X"/>
+                </Entry.Behaviors>
+            </Entry>
+
+            <!--<Button Text="Confirmar datos"
+                Clicked="Button_Clicked">
+                
+            </Button>-->
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

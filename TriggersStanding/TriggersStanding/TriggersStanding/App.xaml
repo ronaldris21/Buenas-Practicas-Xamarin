@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TriggersStanding.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="appCryan">#0BD7E6</Color>
+            <Color x:Key="appDarkBlue">#1F4980</Color>
+            <Color x:Key="appDarkTone">#033C40</Color>
+        </ResourceDictionary>
+
+
+        <Style x:Key="pageFrame" TargetType="Frame">
+
+            <Setter Property="BackgroundColor" Value="LightGray"/>
+            <Setter Property="BorderColor" Value="{StaticResource appDarkBlue}"  />
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="HorizontalOptions" Value="Fill" />
+            <Setter Property="VerticalOptions" Value="Fill" />
+            <Setter Property="Margin" Value="12" />
+        </Style>
+
+
+        <Style x:Key="labelHeader" TargetType="Label">
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="FontFamily" Value="IBMPlexMono-Bold"/>
+            <Setter Property="TextColor" Value="{StaticResource appDarkBlue}"/>
+            <Setter Property="Margin" Value="5,5"/>
+
+        </Style>
+
+
+        <Style x:Key="EntryStyle" TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="LightGray"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="TextColor" Value="DarkBlue"/>
+            <Setter Property="FontFamily" Value="IBMPlexMono-SemiBoldItalic"/>
+        </Style>
+        <Style x:Key="btnSelectedStyle" TargetType="Button">
+
+        </Style>
+    </Application.Resources>
+
+
+</Application>

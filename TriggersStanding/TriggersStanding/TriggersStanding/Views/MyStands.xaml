@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TriggersStanding.Views.MyStands"
+             
+             Title="{Binding Username}">
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Citas agendadas:"
+                   Style="{StaticResource labelHeader}"
+                 />
+            <ScrollView>
+                <StackLayout>
+                    <ListView ItemsSource="{Binding Lcitas}"
+                              RowHeight="200">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame Style="{Binding pageFrame}">
+                                        <Editor Text="{Binding}"
+                                                   
+                                                   HeightRequest="180"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   TextColor="Black"
+                                                   FontAttributes="Bold"
+                                                   />
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
